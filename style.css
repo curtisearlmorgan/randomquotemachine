@@ -1,0 +1,26 @@
+#quote-box{
+  background-color: #fff;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 3%;
+  width: 75%;
+  margin: auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  color: #36454f;
+}
+#new-quote{
+  margin: 10px;
+  box-shadow: 3px 3px 3px grey;
+}
+#tweet-quote{
+  margin: 10px;
+  box-shadow: 3px 3px 3px grey;
+}
+
+h2 {
+  font-size: 25px;
+}
+

@@ -1,0 +1,39 @@
+class App extends React.Component {
+     constructor(props){
+          super(props);
+        this.state = {
+          text:"",
+          author:""
+        }
+          this.handleClick = this.handleClick.bind(this)
+        }
+    
+   handleClick(){
+    const randNumber = Math.floor(Math.random()*quoteArr.length)
+    this.setState({
+      text:quoteArr[randNumber][0],
+      author:quoteArr[randNumber][1]
+  })
+  }
+    componentDidMount(){
+      this.handleClick();
+    }
+        render() {
+          return (
+         <div>    
+              <h1>Random Quote Machine</h1>
+              <blockquote>
+                <h2 id="text">{this.state.text}</h2>
+                <cite id="author">{this.state.author}</cite>
+              </blockquote>     
+            <div>
+<a id="tweet-quote" className="btn btn-success" href={"https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" + this.state.text + this.state.author} target="_blank">Tweet me!</a><button id="new-quote" className="btn btn-success" onClick={this.handleClick}>Generate Wisdom</button>
+            </div>
+              </div>    
+          )
+        }
+      }
+
+const quoteArr = [["Stop acting so small. You are the universe in ecstatic motion.", "- Rumi"],["Silence is the language of God. All else is poor translation.", "- Rumi"],["The weak can never forgive. Forgiveness is the attribute of the strong.", "- Mahatma Gandhi"],["You must live in the present, launch yourself on every wave, find your eternity in each moment.", "- Henry David Thoreau"],["Out beyond ideas of rightdoing and wrongdoing there is a field. I'll meet you there. When the soul lies down in that grass the world is too full to talk about.","- Rumi"],["We shall not cease from exploration, and the end of all our exploring will be to arrive where we started and know the place for the first time.","- T.S. Eliot"],["I sing the body electric.", "- Walt Whitman"],["The roses under my window make no reference to former roses or better ones; they are what they are; they exist with God today. There is no time to them. There is simply the rose; it is perfect in every moment of its existence.", "- Ralph Waldo Emerson"],["Heaven is under our feet, as well as over our heads.","- Henry David Throeau"],["The greatest compliment that was ever paid me was when one asked me what I thought, and attended to my answer.","- Henry Davdi Thoreau"],["We have fallen into the place where everything is music.","- Rumi"]]
+
+ReactDOM.render(<App/>,      document.getElementById("quote-box"));
